@@ -8,6 +8,7 @@ import SignUp from "../person/sign-up";
 import Login from "../person/login";
 import Home from "../person/home";
 import UpdateUser from "../person/update-user";
+import SignIn from "../person/sign-in";
 
 
 const AppRouter = () => {
@@ -15,7 +16,7 @@ const AppRouter = () => {
         <Suspense fallback={<span>Loading....</span>}>
             <Router>
                 <Routes>
-                <Route path="/" element={<Login />} />
+                <Route path="/" element={<SignIn />} />
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/update" element={<UpdateUser />} />
