@@ -1,5 +1,5 @@
 {
-    "name": "ponsun-task",
+    "name": "timesworld-task",
     "version": "0.1.0",
     "private": true,
     "proxy": "http://localhost:8080",
@@ -26,7 +26,7 @@
         "react-toastify": "^10.0.5",
         "redux": "^5.0.1",
         "router": "^1.3.8",
-        "typescript": "^5.8.3",
+        "typescript": "^4.9.5",
         "web-vitals": "^2.1.4"
     },
     "scripts": {

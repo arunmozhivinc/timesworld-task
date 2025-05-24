@@ -1,17 +1,17 @@
-// SignIn.tsx
-import React from 'react';
+import React, { FC } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import {
-  FaGoogle,
-  FaFacebookF,
-  FaLinkedinIn,
-  FaTwitter
-} from 'react-icons/fa';
 import './person.css'; 
 import loginImg from "../assets/illustration.png";
+import { FaGoogle, FaFacebookF, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 
-const SignIn: React.FC = () => {
+const FaGoogleComponent = FaGoogle as unknown as FC;
+const FaFacebookFComponent = FaFacebookF as unknown as FC;
+const FaLinkedinInComponent = FaLinkedinIn as unknown as FC;
+const FaTwitterComponent = FaTwitter as unknown as FC;
+
+const SignIn = () => {
   return (
+    <>
     <Container fluid className="vh-100 d-flex align-items-center justify-content-center">
       <Row className="w-100">
         {/* Left: Form Section */}
@@ -48,24 +48,24 @@ const SignIn: React.FC = () => {
                 </Button>
 
 
-            <div className="text-center my-3 d-flex align-items-center">
+            <div className="text-center my-3 d-flex align-items-center custom-input">
               <hr className="flex-grow-1" />
               <span className="mx-2 text-muted">Or Sign In With</span>
               <hr className="flex-grow-1" />
             </div>
 
-            <div className="d-flex justify-content-center gap-3">
+            <div className="d-flex justify-content-center gap-3 custom-input">
               <Button variant="outline-dark" className="rounded-circle p-3">
-                <FaGoogle />
+                <FaGoogleComponent />
               </Button>
               <Button variant="outline-dark" className="rounded-circle p-3">
-                <FaFacebookF />
+                <FaFacebookFComponent />
               </Button>
               <Button variant="outline-dark" className="rounded-circle p-3">
-                <FaLinkedinIn />
+                <FaLinkedinInComponent />
               </Button>
               <Button variant="outline-dark" className="rounded-circle p-3">
-                <FaTwitter />
+                <FaTwitterComponent />
               </Button>
             </div>
           </Form>
@@ -86,7 +86,8 @@ const SignIn: React.FC = () => {
         </Col>
       </Row>
     </Container>
+    </>
   );
-};
+}
 
 export default SignIn;
