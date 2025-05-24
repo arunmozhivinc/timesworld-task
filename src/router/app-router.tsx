@@ -1,4 +1,5 @@
 import {
+    BrowserRouter,
     Navigate,
     Route,
     BrowserRouter as Router,
@@ -17,7 +18,9 @@ import LoginPage from "../pages/LoginPage";
 const AppRouter = () => {
     return <>
         <Suspense fallback={<span>Loading....</span>}>
-            <Router>
+            {/* <Router> */}
+                <BrowserRouter basename="/timesworld-task">
+
                 <Routes>
                 {/* <Route path="/" element={<SignIn />} />
                 <Route path="/country" element={<CountriesPage />} />
@@ -29,7 +32,8 @@ const AppRouter = () => {
                 <Route path="/home" element={<HomePage />} />
                 <Route path="*" element={<Navigate to="/" />} />
                 </Routes>
-            </Router>
+                </BrowserRouter>
+            {/* </Router> */}
         </Suspense>
     </>
 }
