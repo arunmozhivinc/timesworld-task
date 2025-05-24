@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/timesworld-task/static/css/main.72702c88.css",
-    "main.js": "/timesworld-task/static/js/main.fbf1b709.js",
+    "main.css": "/timesworld-task/static/css/main.767d7201.css",
+    "main.js": "/timesworld-task/static/js/main.35568f1d.js",
     "static/js/453.25e488b7.chunk.js": "/timesworld-task/static/js/453.25e488b7.chunk.js",
-    "static/media/illustration.png": "/timesworld-task/static/media/illustration.0dff8185d2fc5ed2ce76.png",
     "index.html": "/timesworld-task/index.html",
-    "main.72702c88.css.map": "/timesworld-task/static/css/main.72702c88.css.map",
-    "main.fbf1b709.js.map": "/timesworld-task/static/js/main.fbf1b709.js.map",
+    "main.767d7201.css.map": "/timesworld-task/static/css/main.767d7201.css.map",
+    "main.35568f1d.js.map": "/timesworld-task/static/js/main.35568f1d.js.map",
     "453.25e488b7.chunk.js.map": "/timesworld-task/static/js/453.25e488b7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.72702c88.css",
-    "static/js/main.fbf1b709.js"
+    "static/css/main.767d7201.css",
+    "static/js/main.35568f1d.js"
   ]
 }
