@@ -127,6 +127,47 @@ span {
   font-size: 14px;
   color: #6c757d;
 }
+.nav-link-custom {
+  font-size: 16px;
+  color: #495057;
+  padding: 8px 16px;
+  transition: color 0.2s ease-in-out;
+}
+
+/* Style for the active Nav.Link (selected region) */
+.nav-link-custom.active {
+  color: #212529; /* Darker color for active link */
+  font-weight: 700; /* Bold to match Noto Sans 700 */
+  border-bottom: 2px solid #212529; /* Underline for active link */
+}
+
+/* Hover state for Nav.Link */
+.nav-link-custom:hover {
+  color: #212529;
+}
+
+.welcome-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-line {
+  flex: 1;
+  height: 3px;
+  background-color: #3D3D3D;
+}
+
+.welcome-text {
+  white-space: nowrap !important;
+  margin: 0 1rem;
+}
+
+.custom-border {
+  border: 2px solid #3D3D3D !important;
+  border-radius: 0 !important;
+
+}
 
 /* Responsive adjustments */
 @media (max-width: 767.98px) {

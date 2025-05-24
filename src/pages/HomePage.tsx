@@ -10,17 +10,15 @@ import {
   Nav,
   Carousel,
 } from "react-bootstrap";
-import {
-  FaTwitter,
-  FaInstagram,
-  FaLinkedin,
-  FaGlobe,
-} from "react-icons/fa";
+import { FiFacebook } from "react-icons/fi";
+import { FiTwitter } from "react-icons/fi";
+import { FiLinkedin } from "react-icons/fi";
+import { FiYoutube } from "react-icons/fi";
 
-const FaGlobeComponent = FaGlobe as unknown as FC;
-const FaLinkedinFComponent = FaLinkedin as unknown as FC;
-const FaInstagramComponent = FaInstagram as unknown as FC;
-const FaTwitterComponent = FaTwitter as unknown as FC;
+const FiYoutubeComponent = FiYoutube as unknown as FC;
+const FaLinkedinFComponent = FiLinkedin as unknown as FC;
+const FaTwitterComponent = FiTwitter as unknown as FC;
+const FiFacebookComponent = FiFacebook as unknown as FC;
 
 interface Country {
   name: string;
@@ -49,58 +47,91 @@ const HomePage = () => {
   };
 
   return (
-    <><Navbar expand="md" className="py-3 border-bottom">
+    <><Navbar expand="md" className="py-3">
       <Container>
         <Navbar.Brand>Countries</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav>
-            <Nav.Link active={selectedRegion === "All"} onClick={() => setSelectedRegion("All")}>
+            <Nav.Link
+              active={selectedRegion === "All"}
+              onClick={() => setSelectedRegion("All")}
+              className="nav-link-custom"
+            >
               All
             </Nav.Link>
-            <Nav.Link active={selectedRegion === "Asia"} onClick={() => setSelectedRegion("Asia")}>
+            <Nav.Link
+              active={selectedRegion === "Asia"}
+              onClick={() => setSelectedRegion("Asia")}
+              className="nav-link-custom"
+            >
               Asia
             </Nav.Link>
-            <Nav.Link active={selectedRegion === "Europe"} onClick={() => setSelectedRegion("Europe")}>
+            <Nav.Link
+              active={selectedRegion === "Europe"}
+              onClick={() => setSelectedRegion("Europe")}
+              className="nav-link-custom"
+            >
               Europe
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
-    </Navbar><Container className="text-center mt-4">
-        <h2 className="fw-bold border-bottom pb-2 d-inline-block">WELCOME</h2>
-      </Container><Container className="mt-4">
-        <Row>
-          <Col md={8}>
-            <Carousel>
-              <Carousel.Item>
-                <div className="bg-light d-flex justify-content-center align-items-center" style={{ height: 200 }}>
-                  <span>Image 1</span>
-                </div>
-              </Carousel.Item>
-              <Carousel.Item>
-                <div className="bg-light d-flex justify-content-center align-items-center" style={{ height: 200 }}>
-                  <span>Image 2</span>
-                </div>
-              </Carousel.Item>
-            </Carousel>
-          </Col>
-          <Col md={4} className="mt-3 mt-md-0">
-            <Card className="h-100">
-              <Card.Body className="d-flex justify-content-center align-items-center">
-                <span>Feature</span>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
+    </Navbar>
+     <Container className="mt-4">
+      <Row className="align-items-center text-center">
+        <Col xs={12} md={5} className="d-flex justify-content-center">
+          <div className="welcome-line mb-3"></div>
+        </Col>
+        <Col xs={12} md={2}>
+          <h2 className="fw-bold welcome-text my-3 my-md-0">WELCOME</h2>
+        </Col>
+        <Col xs={12} md={5} className="d-flex justify-content-center">
+          <div className="welcome-line mt-4"></div>
+        </Col>
+      </Row>
+    </Container>
+
+      <Container className="mt-4">
+<Row >
+  <Col xs={12} md={4} className="order-1 order-md-2 mt-3 mt-md-0">
+    {/* Feature Card */}
+    <Card className="h-100 custom-border">
+      <Card.Body className="d-flex justify-content-center align-items-center">
+        <span>Feature</span>
+      </Card.Body>
+    </Card>
+  </Col>
+  <Col xs={12} md={8} className="order-2 order-md-1">
+    {/* Carousel */}
+    <Carousel className="custom-border">
+      <Carousel.Item>
+        <div
+          className="bg-light d-flex justify-content-center align-items-center"
+          style={{ height: '494px', width: '100%' }}
+        >
+          <span>Image 1</span>
+        </div>
+      </Carousel.Item>
+      <Carousel.Item>
+        <div
+          className="bg-light d-flex justify-content-center align-items-center"
+          style={{ height: '494px', width: '100%' }}
+        >
+          <span>Image 2</span>
+        </div>
+      </Carousel.Item>
+    </Carousel>
+  </Col>
+</Row>
+
       </Container><Container className="my-4">
         <Row xs={1} sm={2} md={2} lg={2} xl={2} className="g-3">
           {filteredCountries.slice(0, visible).map((country, idx) => (
             <Col key={idx}>
-              <Card>
+              <Card className="custom-border">
                 <Row className="g-0 align-items-center">
                   <Col xs={3}>
-                    {/* <div className="bg-secondary" style={{ height: "100%", width: "100%", minHeight: "60px" }}></div> */}
                     <Card.Img variant="top" src={country.flag} height={100} width={100} />
 
                   </Col>
@@ -109,10 +140,6 @@ const HomePage = () => {
                       <Card.Title>{country.name}</Card.Title>
                       <Card.Text>{country.region}</Card.Text>
                     </Card.Body>
-                    {/* <Card.Body>
-              <Card.Title className="mb-1">Afghanistan</Card.Title>
-              <Card.Text className="text-muted small">Asia</Card.Text>
-            </Card.Body> */}
                   </Col>
                 </Row>
               </Card>
@@ -128,15 +155,42 @@ const HomePage = () => {
             </Button>
           </div>
         )}
-      </Container><footer className="bg-white text-center border-top py-4">
-        <div className="mb-2">
-          <FaTwitterComponent />
-          <FaInstagramComponent />
-          <FaLinkedinFComponent />
-          <FaGlobeComponent />
+      </Container>
+      <footer className="bg-white text-center py-4">
+
+        <div className="d-flex justify-content-center gap-3 mt-3">
+          <Button
+            variant="outline-dark"
+            className="d-flex justify-content-center align-items-center rounded-circle p-0"
+            style={{ width: "48px", height: "48px" }}
+          >
+            <FiFacebookComponent />
+          </Button>
+          <Button
+            variant="outline-dark"
+            className="d-flex justify-content-center align-items-center rounded-circle p-0"
+            style={{ width: "48px", height: "48px" }}
+          >
+            <FaTwitterComponent />
+          </Button>
+          <Button
+            variant="outline-dark"
+            className="d-flex justify-content-center align-items-center rounded-circle p-0"
+            style={{ width: "48px", height: "48px" }}
+          >
+            <FaLinkedinFComponent />
+          </Button>
+          <Button
+            variant="outline-dark"
+            className="d-flex justify-content-center align-items-center rounded-circle p-0"
+            style={{ width: "48px", height: "48px" }}
+          >
+            <FiYoutubeComponent />
+          </Button>
+
         </div>
-        <div className="small">Example@domain.com</div>
-        <div className="text-muted small">
+        <div className="small mt-5">Example@domain.com</div>
+        <div className="text-muted small mt-3">
           Copyright © 2025 Name. All rights reserved.
         </div>
       </footer></>
