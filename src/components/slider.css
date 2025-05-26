@@ -3,7 +3,7 @@
   width: 100%;
   max-width: 800px; /* Adjust as needed */
   margin: 0 auto;
-  border: 1px solid #000; /* Border around the slider */
+  border: 2px solid #000; /* Border around the slider */
   padding: 20px;
 }
 
