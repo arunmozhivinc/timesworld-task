@@ -1,9 +1,9 @@
 .slider-container {
   position: relative;
   width: 100%;
-  max-width: 800px; /* Adjust as needed */
-  margin: 0 auto;
-  border: 2px solid #000; /* Border around the slider */
+  max-width: 800px; 
+  /* margin: 0 auto; */
+  border: 2px solid #3E3E3E; /* Border around the slider */
   padding: 20px;
 }
 
