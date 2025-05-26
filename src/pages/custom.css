@@ -205,3 +205,46 @@ span {
     font-size: 13px;
   }
 }
+
+/* Custom border for carousel and card */
+.custom-border {
+  border: 1px solid #dee2e6; /* Example border style */
+  border-radius: 8px;
+}
+
+/* Style for carousel control icons */
+.carousel-control-icon {
+  color: #333; /* Icon color */
+  font-size: 2rem; /* Icon size */
+  transition: color 0.3s ease;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 10%; /* Adjust control area width */
+  background: none; /* Remove default gradient */
+}
+
+.carousel-control-prev:hover .carousel-control-icon,
+.carousel-control-next:hover .carousel-control-icon {
+  color: #007bff; /* Hover color */
+}
+
+/* Style for carousel indicators (dots) */
+.carousel-indicators {
+  bottom: -50px; /* Position dots below carousel */
+}
+
+.carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc; /* Inactive dot color */
+  border: none;
+  margin: 0 6px;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-indicators .active {
+  background-color: #007bff; /* Active dot color */
+}

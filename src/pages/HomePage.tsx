@@ -14,6 +14,7 @@ import { FiFacebook } from "react-icons/fi";
 import { FiTwitter } from "react-icons/fi";
 import { FiLinkedin } from "react-icons/fi";
 import { FiYoutube } from "react-icons/fi";
+import Slider from "../components/Slider";
 
 const FiYoutubeComponent = FiYoutube as unknown as FC;
 const FaLinkedinFComponent = FiLinkedin as unknown as FC;
@@ -78,54 +79,57 @@ const HomePage = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-     <Container className="mt-4">
-      <Row className="align-items-center text-center">
-        <Col xs={12} md={5} className="d-flex justify-content-center">
-          <div className="welcome-line mb-3"></div>
-        </Col>
-        <Col xs={12} md={2}>
-          <h2 className="fw-bold welcome-text my-3 my-md-0">WELCOME</h2>
-        </Col>
-        <Col xs={12} md={5} className="d-flex justify-content-center">
-          <div className="welcome-line mt-4"></div>
-        </Col>
-      </Row>
-    </Container>
+      <Container className="mt-4">
+        <Row className="align-items-center text-center">
+          <Col xs={12} md={5} className="d-flex justify-content-center">
+            <div className="welcome-line mb-3"></div>
+          </Col>
+          <Col xs={12} md={2}>
+            <h2 className="fw-bold welcome-text my-3 my-md-0">WELCOME</h2>
+          </Col>
+          <Col xs={12} md={5} className="d-flex justify-content-center">
+            <div className="welcome-line mt-4"></div>
+          </Col>
+        </Row>
+      </Container>
+      
 
       <Container className="mt-4">
-<Row >
-  <Col xs={12} md={4} className="order-1 order-md-2 mt-3 mt-md-0">
-    {/* Feature Card */}
-    <Card className="h-100 custom-border">
-      <Card.Body className="d-flex justify-content-center align-items-center">
-        <span>Feature</span>
-      </Card.Body>
-    </Card>
-  </Col>
-  <Col xs={12} md={8} className="order-2 order-md-1">
-    {/* Carousel */}
-    <Carousel className="custom-border">
-      <Carousel.Item>
-        <div
-          className="bg-light d-flex justify-content-center align-items-center"
-          style={{ height: '494px', width: '100%' }}
-        >
-          <span>Image 1</span>
-        </div>
-      </Carousel.Item>
-      <Carousel.Item>
-        <div
-          className="bg-light d-flex justify-content-center align-items-center"
-          style={{ height: '494px', width: '100%' }}
-        >
-          <span>Image 2</span>
-        </div>
-      </Carousel.Item>
-    </Carousel>
-  </Col>
-</Row>
+        <Row >
+          <Col xs={12} md={4} className="order-1 order-md-2 mt-3 mt-md-0">
+            <Card className="h-100 custom-border">
+              <Card.Body className="d-flex justify-content-center align-items-center">
+                <span>Feature</span>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col xs={12} md={8} className="order-2 order-md-1">
+            {/* <Carousel className="custom-border">
+              <Carousel.Item>
+                <div
+                  className="bg-light d-flex justify-content-center align-items-center"
+                  style={{ height: '494px', width: '100%' }}
+                >
+                  <span>Image 1</span>
+                </div>
+              </Carousel.Item>
+              <Carousel.Item>
+                <div
+                  className="bg-light d-flex justify-content-center align-items-center"
+                  style={{ height: '494px', width: '100%' }}
+                >
+                  <span>Image 2</span>
+                </div>
+              </Carousel.Item>
+            </Carousel> */}
+            <Slider />
+          </Col>
+        </Row>
 
-      </Container><Container className="my-4">
+      </Container>
+
+
+      <Container className="my-4">
         <Row xs={1} sm={2} md={2} lg={2} xl={2} className="g-3">
           {filteredCountries.slice(0, visible).map((country, idx) => (
             <Col key={idx}>
